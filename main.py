@@ -1,3 +1,5 @@
+# image to text converter 
+
 from PIL import Image
 import pytesseract
 import pathlib
