@@ -14,3 +14,13 @@ for path in pathlib.Path("per_pics").iterdir():
         img = path
         text += pytesseract.image_to_string(Image.open(img), lang="fas")
         text += 50 * "_"
+
+for path in pathlib.Path("eng_pics").iterdir():
+    if path.is_file():
+        img = path
+        eng = pytesseract.image_to_string(Image.open(img), lang="eng")
+        if "y" in ans.lower():
+            text += str(translator.translate(eng, src="en", dest="fa"))
+        else:
+            text += eng
+        text += 50 * "_"
