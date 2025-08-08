@@ -24,3 +24,7 @@ for path in pathlib.Path("eng_pics").iterdir():
         else:
             text += eng
         text += 50 * "_"
+
+
+with open("text.txt", "w", encoding="utf8") as f:
+    f.write(text)
